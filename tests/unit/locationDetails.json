@@ -1,0 +1,25 @@
+[
+    {
+        "woeid": 727232,
+        "country": "nl",
+        "city": "Amsterdam",
+        "code": "AMS"
+    },
+    {
+        "woeid": 804365,
+        "country": "hu",
+        "city": "Budapest",
+        "code": "BUD"
+    },
+    {
+        "woeid": 766273,
+        "country": "es",
+        "city": "Madrid",
+        "code": "MAD"
+    },
+    {
+        "woied": 44418,
+        "code": "LHR",
+        "city": "London"
+    }
+]

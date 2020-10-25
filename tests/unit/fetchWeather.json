@@ -1,0 +1,24 @@
+{
+  "data": {
+            "json": [
+                {
+                  "id":5840871787331584,
+                  "weather_state_name":"Light Rain",
+                  "weather_state_abbr":"lr",
+                  "wind_direction_compass":"SW",
+                  "created":"2020-10-23T09:20:02.057291Z",
+                  "applicable_date":"2020-10-23",
+                  "min_temp":9.835,
+                  "max_temp":15.355,
+                  "the_temp":14.79,
+                  "wind_speed":7.303305560136802,
+                  "wind_direction":231.66500571621617,
+                  "air_pressure":1008,
+                  "humidity":78,
+                  "visibility":10.015882247673586,
+                  "predictability":75
+                }
+              ]
+        }
+    
+}

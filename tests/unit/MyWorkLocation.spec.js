@@ -31,7 +31,8 @@ describe('Search action', () => {
             getFlights: () => flights,
             getWoiedDetails: () => locationDetails,
             getSelectedDate: () => getSelectedDate,
-            weather: () => weatherDetails
+            weather: () => weatherDetails,
+            user: () => 'name',
         }
     })
     test('Search the available options on selected date and cities', () => {

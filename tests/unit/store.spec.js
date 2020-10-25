@@ -179,7 +179,7 @@ describe('actions, mutations, state', () => {
         await flushPromises();
         return store.dispatch('updateSelectedFlight', flightDetail)
             .then(() => {
-                expect(store.state.selectionConfirmed)
+                expect(store.getters.isSelectionConfrimed)
                     .toBeTruthy()
                 expect(store.getters.getSelectedFlight)
                     .toEqual(flightDetail)

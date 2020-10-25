@@ -67,6 +67,7 @@
 
 .office-confirmation {
     margin: auto;
+    padding: 34px 0;
     max-width: 768px;
 
     .office-confirmation__timeLine {
@@ -106,6 +107,14 @@
                 font-size: 16px;
                 font-weight: 700;
                 font-style: italic;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
             }
         }
     }

@@ -25,9 +25,9 @@ npm run test:unit
 npm run lint
 ```
 
-### Startup node server, in a new terminal goto src/server/
+### Startup node server, in a new terminal 
 ```
-node app.js
+node src/server/app.js
 ```
 
 ### Customize configuration

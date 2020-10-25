@@ -25,12 +25,16 @@
 </style>
 
 <script>
+import {
+    mapGetters
+} from 'vuex'
+
 export default {
     name: 'Toolbar',
-    data() {
-        return {
-            user: this.$store.getters.user
-        }
+    computed: {
+        ...mapGetters([
+            'user'
+        ])
     },
     methods: {
         logout: function () {

@@ -12,36 +12,60 @@ localVue.use(Vuex)
 localVue.use(VueRouter)
 
 describe('Load top nav bar', () => {
-const router = new VueRouter()
-  const mountFunction = options => {
-    return mount(Toolbar, {
-      localVue,
-      router,
-      ...options
+    const router = new VueRouter()
+    const mountFunction = options => {
+        return mount(Toolbar, {
+            localVue,
+            router,
+            ...options
+        })
+    }
+
+    test('Redirect to home page if the logo is selected', () => {
+        let getters = {
+            user: () => 'Test'
+        }
+
+        let mockStore = new Vuex.Store({
+            getters
+        })
+
+        const wrapper = mountFunction({
+            store: mockStore
+        })
+
+        wrapper.find('.office-toolbar__home').trigger('click')
+
+        expect(wrapper.vm.$route.path).toBe('/home')
+        wrapper.destroy();
     })
-  }
 
-  it('Clear the sessiona and redirect to login page', async () => {
-    let actions = {
-        logout: jest.fn()
-      }
+    test('Clear the sessiona and redirect to login page', async () => {
+        let actions = {
+            logout: jest.fn()
+        }
 
-      let store = new Vuex.Store({
-        actions
-      })
-  
-      const wrapper = mountFunction({
-        store
-      })
+        let getters = {
+            user: () => 'Test'
+        }
 
-    wrapper.find('button').trigger('click')
+        let mockStore = new Vuex.Store({
+            actions,
+            getters
+        })
 
-    await Vue.nextTick()
+        const wrapper = mountFunction({
+            store: mockStore
+        })
 
-    await wrapper.find('.md-list-item-button').at(0).trigger('click')
-    
-    expect(actions.logout.mock.calls).toHaveLength(1)
-    expect(wrapper.vm.$route.path).toBe('/')
-    wrapper.destroy();
-  });
+        wrapper.find('button').trigger('click')
+
+        await Vue.nextTick()
+
+        await wrapper.find('.md-list-item-button').at(0).trigger('click')
+
+        expect(actions.logout.mock.calls).toHaveLength(1)
+        expect(wrapper.vm.$route.path).toBe('/')
+        wrapper.destroy();
+    });
 })

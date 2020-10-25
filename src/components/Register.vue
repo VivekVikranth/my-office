@@ -1,10 +1,9 @@
 <template>
 <div>
-    <h4>Register</h4>
-    <form novalidate class="md-layout md-alignment-center-center" @submit.prevent="register">
-        <md-card class="md-layout-item md-size-25 md-small-size-100">
+    <form novalidate class="md-layout md-alignment-center-center office-register" @submit.prevent="register">
+        <md-card class="md-layout-item md-size-25 md-small-size-100 elevation-0">
             <md-card-header>
-                <div class="md-title">Welcome Back!</div>
+                <div class="md-title">Register</div>
             </md-card-header>
 
             <md-card-content>
@@ -35,6 +34,14 @@
     </form>
 </div>
 </template>
+<style scoped>
+    .office-register {
+        height: 100vh;
+    }
+    .md-card {
+        padding: 24px 0;
+    }
+</style>
 
 <script>
 export default {

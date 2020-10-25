@@ -135,12 +135,6 @@ export default {
                     this.isWeatherLoaded = true;
                     this.$emit('enableWeatherLoader', false);
                 })
-                .catch(err => {
-                    if (err.response) {
-                        this.loading = false;
-                        this.loaded = true;
-                    }
-                });
         },
         confirmSelection(flightDetails) {
             this.$store

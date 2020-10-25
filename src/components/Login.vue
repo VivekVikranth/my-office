@@ -22,6 +22,7 @@
             </md-card-content>
             <md-card-actions>
                 <md-button type="submit" class="md-raised md-primary">Login</md-button>
+                <md-button class="md-accent js-register" @click="redirectToRegister">Register</md-button>
             </md-card-actions>
         </md-card>
         <md-snackbar md-position="center" :md-duration="duration" :md-active.sync="showSnackbar" md-persistent>
@@ -78,6 +79,8 @@ export default {
         }
     },
     methods: {
+        // @vuese
+        // Updates Invalid field
         getValidationClass(fieldName) {
             const field = this.$v.form[fieldName]
 
@@ -87,6 +90,8 @@ export default {
                 }
             }
         },
+        // @vuese
+        // Fires on Form submit event
         validateInline() {
             this.$v.$touch()
 
@@ -94,6 +99,9 @@ export default {
                 this.handleSubmit()
             }
         },
+        // @vuese
+        // Fires after successful inline validation
+        // Validate login details in server
         async handleSubmit() {
             let email = this.form.email
             let password = this.form.password
@@ -107,6 +115,11 @@ export default {
                         this.showSnackbar = true;
                     }
                 })
+        },
+        // @vuese
+        // Redirect to user registration page on register button click
+        redirectToRegister() {
+            this.$router.push('/register')
         }
     }
 }

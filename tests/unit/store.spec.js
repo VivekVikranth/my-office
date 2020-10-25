@@ -12,7 +12,7 @@ Vue.use(Vuex)
 
 jest.mock('axios');
 
-describe('actions', () => {
+describe('actions, mutations, state', () => {
     let store
 
     beforeEach(() => {

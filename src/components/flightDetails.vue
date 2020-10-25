@@ -118,6 +118,8 @@ export default {
         ])
     },
     methods: {
+        // @vuese
+        // Selects the flight option from the list and updates the weather for the destinated city.
         selectItem(cityCode, index) {
             this.selectedFlight = index;
             let defaultDate = this.getSelectedDate;

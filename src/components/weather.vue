@@ -152,6 +152,8 @@ export default {
             return this.$store.getters.weather.filter((date, idx) => idx < 1)
         }
     },
+    // @vuese
+    // Updates the message if weather data is not available
     created() {
         this.weatherNotLoadedMessage = this.weatherList.length === 0 ? 'Most location have data from 5-10 days in the future' : ' '
     }

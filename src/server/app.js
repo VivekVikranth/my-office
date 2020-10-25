@@ -97,6 +97,9 @@ router.post('/login', (req, res) => {
     });
 })
 
+/*
+  Fetch weather detail from metaweather api for the given date and city.
+*/
 router.post('/fetchWeather', (req, res) => {
     const url = "https://www.metaweather.com/api/location/" + req.body.woeid + '/' + req.body.date;
 
@@ -130,6 +133,9 @@ const get_formatedDate = (timestamp) => {
     return formattedTime;
 }
 
+/*
+  Search flights for the selected option from skypicker/kiwi.  
+*/
 router.post('/searchFlights', (req, res) => {
     let current_url = new URL('https://api.skypicker.com/flights');
 
@@ -137,6 +143,8 @@ router.post('/searchFlights', (req, res) => {
     current_url.searchParams.append('fly_to', req.body.fly_to);
     current_url.searchParams.append('date_from', req.body.date_from);
     current_url.searchParams.append('partner', 'picky')
+
+    //Request max_stopovers, one_for_city are static now, it can be added as a filter in FE to make more dynamic.
     current_url.searchParams.append('max_stopovers', 1)
     current_url.searchParams.append('one_for_city', 1)
 

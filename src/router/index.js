@@ -22,6 +22,14 @@ const routes = [
     }
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/profile.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/selectyouroffice',
     name: 'MyWorkLocation',
     component: () => import('../views/MyWorkLocation.vue'),

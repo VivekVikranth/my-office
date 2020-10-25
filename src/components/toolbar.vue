@@ -5,7 +5,7 @@
         <md-menu md-direction="bottom-start" md-align-trigger md-size="auto">
             <md-button md-menu-trigger class="md-primary">Welcome {{user}}</md-button>
             <md-menu-content ref="menu">
-                <md-menu-item>Profile</md-menu-item>
+                <md-menu-item @click="gotoProfile">Profile</md-menu-item>
                 <md-menu-item @click="logout">Logout</md-menu-item>
             </md-menu-content>
         </md-menu>
@@ -45,6 +45,9 @@ export default {
         },
         redirectToHome: function() {
             this.$router.push('/home');
+        },
+        gotoProfile: function() {
+            this.$router.push('/profile');
         }
     }
 }

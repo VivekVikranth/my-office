@@ -5,14 +5,14 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and start express server for development
 ```
-npm run serve
+npm start
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run postinstall
 ```
 
 ### Run your unit tests
@@ -23,11 +23,6 @@ npm run test:unit
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Startup node server, in a new terminal 
-```
-node src/server/app.js
 ```
 
 ### Customize configuration

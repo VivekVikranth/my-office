@@ -25,7 +25,7 @@ const allowCrossDomain = function (req, res, next) {
 
 app.use(allowCrossDomain)
 
-process.env.TZ='UTC';
+process.env.TZ = 'UTC';
 
 // Registers user
 router.post('/register', function (req, res) {
@@ -55,9 +55,9 @@ router.post('/register-admin', function (req, res) {
         1
     ],
         function (err) {
-            if (err) return res.status(500).send("There was a problem registering the user.")
+            if (err) return res.status(500).send({ auth: false, message: 'Problem with creating user/user already created' })
             db.selectByEmail(req.body.email, (err, user) => {
-                if (err) return res.status(500).send("There was a problem getting user")
+                if (err) return res.status(500).send({ auth: false, message: 'Problem with creating user/user already created' })
                 let token = jwt.sign({ id: user.id }, config.secret, {
                     expiresIn: 86400 // expires in 24 hours
                 });
@@ -126,12 +126,12 @@ router.post('/fetchWeather', (req, res) => {
 
 
 
-const get_formatedDate = (timestamp) => { 
+const get_formatedDate = (timestamp) => {
     let formattedTime = new Date(timestamp * 1000);
-   
+
 
     formattedTime = formattedTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: "Europe/London" })
-    
+
     return formattedTime;
 }
 

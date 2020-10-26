@@ -102,7 +102,7 @@ export default {
         // @vuese
         // Fires after successful inline validation
         // Validate login details in server
-        async handleSubmit() {
+         handleSubmit() {
             let email = this.form.email
             let password = this.form.password
 

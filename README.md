@@ -10,7 +10,7 @@ npm install
 npm start
 ```
 
-### Compiles and minifies for production
+### Build Vue cli for production
 ```
 npm run postinstall
 ```

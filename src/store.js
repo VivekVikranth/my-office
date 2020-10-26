@@ -96,7 +96,7 @@ export const actions = {
     login({ commit }, user) {
         return new Promise((resolve, reject) => {
             commit('auth_request')
-            axios.post('http://localhost:3000/login', user)
+            axios.post('http://localhost:80/login', user)
                 .then(resp => {
                     const token = resp.data.token
                     const user = resp.data.user
@@ -121,7 +121,7 @@ export const actions = {
     register({ commit }, user) {
         return new Promise((resolve, reject) => {
             commit('auth_request')
-            axios.post('http://localhost:3000/register', user)
+            axios.post('http://localhost:80/register', user)
                 .then(resp => {
                     const token = resp.data.token
                     const user = resp.data.user
@@ -150,7 +150,7 @@ export const actions = {
     fetchWeather({ commit }, woeid) {
         return new Promise((resolve, reject) => {
             commit('auth_request')
-            axios.post('http://localhost:3000/fetchWeather', woeid)
+            axios.post('http://localhost:80/fetchWeather', woeid)
                 .then(resp => {
                     commit('fetch_succes', resp.data.json)
                     resolve(resp)
@@ -164,7 +164,7 @@ export const actions = {
     searchFlights({ commit }, flightDetails) {
         return new Promise((resolve, reject) => {
             commit('auth_request')
-            axios.post('http://localhost:3000/searchFlights', flightDetails)
+            axios.post('http://localhost:80/searchFlights', flightDetails)
                 .then(resp => {
                     commit('search_flight_success', resp.data.result)
                     resolve(resp)

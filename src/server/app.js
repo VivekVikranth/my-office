@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const db = new DB("sqlitedb")
 const app = express();
+const serveStatic = require("serve-static")
+const path = require('path');
 const router = express.Router();
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -175,8 +177,8 @@ router.post('/searchFlights', (req, res) => {
 })
 
 app.use(router)
-
-let port = process.env.PORT || 3000;
+app.use(serveStatic(path.join(__dirname, '../../dist')));
+const port = process.env.PORT || 80;
 
 let server = app.listen(port, function () {
     console.log('Express server listening on port ' + port)

@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "postinstall": "npm run build",
-    "start": "node src/server/app.js",
+    "start": "node ./src/server/app.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "test:debug": "node --inspect-brk node_modules/.bin/vue-cli-service test:unit --no-cache --watch --runInBand"

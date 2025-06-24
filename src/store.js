@@ -37,7 +37,7 @@ const state = {
         city: 'Madrid',
         code: 'MAD'
     }, {
-        woied: 44418,
+        woeid: 44418,
         code: 'LHR',
         city: 'London'
     }]

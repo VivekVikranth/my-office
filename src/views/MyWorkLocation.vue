@@ -162,7 +162,7 @@ export default {
             defaultDate = this.form.selectedDate;
         }
 
-        weatherPayload['woeid'] = woeid.woied
+        weatherPayload['woeid'] = woeid.woeid
         weatherPayload['date'] = defaultDate
 
         this.$store
